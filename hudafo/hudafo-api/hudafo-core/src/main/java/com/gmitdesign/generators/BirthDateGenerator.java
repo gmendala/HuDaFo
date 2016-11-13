@@ -12,12 +12,27 @@ import java.util.Random;
 import com.gmitdesign.base.GeneratorBase;
 import com.gmitdesign.base.GeneratorOutput;
 
+/**
+ * This generator creates a list of randomly generated dates for an adults. There is no input because everything is 
+ * generated inside this class. The only thing that user needs to specify is the number of results
+ * in the output list.
+ * @author grzegorz
+ *
+ */
 public class BirthDateGenerator extends GeneratorBase<Date> {
 
+	/** Number of results in output list. **/
 	private int numberOfResults;
+	/** Specified adult age **/
 	private static final int ADULT_AGE = 18;
+	/** Formatter to clean the Date format **/
 	private static final DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 	
+	/**
+	 * Constructs this generator using supported output and a number of results in the output.
+	 * @param output - the results will appear in this implementation of the GeneratorOutput interface.
+	 * @param numberOfResults - number of results that will be generated.
+	 */
 	public BirthDateGenerator(GeneratorOutput output, int numberOfResults) {
 		super(output);
 		this.numberOfResults = numberOfResults;

@@ -1,5 +1,5 @@
 /**
- * This package contain every posiible implementation of GeneratorBase.
+ * This package contain every possible implementation of GeneratorBase.
  */
 /**
  * @author grzegorz
