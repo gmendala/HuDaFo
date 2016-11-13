@@ -12,13 +12,11 @@ import java.util.Random;
 import com.gmitdesign.base.GeneratorBase;
 import com.gmitdesign.base.GeneratorOutput;
 
-public class BirthDateGenerator extends GeneratorBase {
+public class BirthDateGenerator extends GeneratorBase<Date> {
 
 	private int numberOfResults;
 	private static final int ADULT_AGE = 18;
 	private static final DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-
-	
 	
 	public BirthDateGenerator(GeneratorOutput output, int numberOfResults) {
 		super(output);
@@ -26,7 +24,7 @@ public class BirthDateGenerator extends GeneratorBase {
 	}
 
 	@Override
-	public <T> List<T> processTheData() {
+	public List<Date> processTheData() {
 		List<Date> dates = new ArrayList<Date>();
 		Random rnd = new Random();
 		if(this.numberOfResults > 0){
@@ -38,16 +36,12 @@ public class BirthDateGenerator extends GeneratorBase {
 				int day = rnd.nextInt(result.getMaximum(Calendar.DATE)) + 1 ;
 				result.set(Calendar.DATE, day);
 				try {
-					dates.add(formatter.parse(formatter.format(result.getTime())));
+					dates.add((Date) formatter.parse(formatter.format(result.getTime())));
 				} catch (ParseException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
-						
-						
+				}	
 			}
 		}
-		return (List<T>) dates;
+		return dates;
 	}
-
 }

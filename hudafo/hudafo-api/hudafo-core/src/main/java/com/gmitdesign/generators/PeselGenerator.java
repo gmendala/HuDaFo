@@ -6,7 +6,7 @@ import java.util.List;
 import com.gmitdesign.base.GeneratorBase;
 import com.gmitdesign.base.GeneratorOutput;
 
-public class PeselGenerator extends GeneratorBase {
+public class PeselGenerator extends GeneratorBase<String> {
 
 	private Date birthdate;
 	private GenderType gender;
@@ -18,7 +18,7 @@ public class PeselGenerator extends GeneratorBase {
 	}
 	
 	@Override
-	public <T> List<T> processTheData() {
+	public List<String> processTheData() {
 		//String year = Calendar.
 		return null;
 	}

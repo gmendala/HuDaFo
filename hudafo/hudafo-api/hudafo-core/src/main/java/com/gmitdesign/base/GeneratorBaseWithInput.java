@@ -6,15 +6,16 @@ package com.gmitdesign.base;
  * that uses any form of input data. You can define for example an input that will be a 
  * list of items coming from database query, from a file or simply from a hard-coded table.
  * @author grzegorz
+ * @param <T>
  *
  */
-public abstract class GeneratorBaseWithInput extends GeneratorBase {
+public abstract class GeneratorBaseWithInput<T> extends GeneratorBase<T> {
 
 	/**
 	 * An Input used by inheriting processors of the generator. The generated output
 	 * is defined by the generator method - processTheData() - describing the rules used on this input.
 	 */
-	private GeneratorInput input;
+	private GeneratorInput<T> input;
 	
 	/**
 	 * Extended constructor. It defines both input and output data.
@@ -22,7 +23,7 @@ public abstract class GeneratorBaseWithInput extends GeneratorBase {
 	 * @param input - is a list of data to be used by the generator in order to generate data that is sent 
 	 * to the output.
 	 */
-	public GeneratorBaseWithInput(GeneratorOutput output, GeneratorInput input) {
+	public GeneratorBaseWithInput(GeneratorOutput output, GeneratorInput<T> input) {
 		super(output);
 		this.input = input;
 	}
@@ -35,7 +36,7 @@ public abstract class GeneratorBaseWithInput extends GeneratorBase {
 	 * to the output.
 	 * @param name - generator unique name.
 	 */
-	public GeneratorBaseWithInput(GeneratorOutput output, GeneratorInput input, String name) {
+	public GeneratorBaseWithInput(GeneratorOutput output, GeneratorInput<T> input, String name) {
 		super(output, name);
 		this.input = input;
 	}
@@ -44,7 +45,7 @@ public abstract class GeneratorBaseWithInput extends GeneratorBase {
 	 * Gets the input interface for this generator.
 	 * @return
 	 */
-	public GeneratorInput getInput() {
+	public GeneratorInput<T> getInput() {
 		return input;
 	}
 }

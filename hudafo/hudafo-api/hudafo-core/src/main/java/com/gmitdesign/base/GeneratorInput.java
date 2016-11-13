@@ -8,7 +8,7 @@ import java.util.List;
  * @author grzegorz
  *
  */
-public interface GeneratorInput {
+public interface GeneratorInput <T> {
 
 	/**
 	 * This is the method that should return a list of elements that will be feeding the generator.
@@ -18,7 +18,7 @@ public interface GeneratorInput {
 	 * That would be simple name generator feeding from an input implementing this interface.
 	 * @return
 	 */
-	<T> List<T> getInputForTheGenerator();
+	List<T> getInputForTheGenerator();
 	
 	
 }

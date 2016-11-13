@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.gmitdesign.base.GeneratorInput;
 
-public class SimpleTestGeneratorInput implements GeneratorInput {
+public class SimpleTestGeneratorInput implements GeneratorInput<String> {
 
 	private String[] table = {"Andrew", "Barbara", "Camille", "Daniel", "Eugene", 
 			"Francis", "Gary", "Hugh", "Ingrid", "Jacob", "Kate", "Ludvig", "Mark", 

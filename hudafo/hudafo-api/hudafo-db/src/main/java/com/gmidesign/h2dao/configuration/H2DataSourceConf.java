@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.h2.jdbcx.JdbcDataSource;
+
 
 public class H2DataSourceConf  implements H2DSConfiguration{
 

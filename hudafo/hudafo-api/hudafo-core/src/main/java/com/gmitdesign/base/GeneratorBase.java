@@ -11,7 +11,7 @@ import com.gmitdesign.base.GeneratorOutput;
  * @author grzegorz
  *
  */
-public abstract class GeneratorBase {
+public abstract class GeneratorBase<T> {
 
 	/** Output that will be used for generated data **/
 	private GeneratorOutput output;
@@ -44,12 +44,12 @@ public abstract class GeneratorBase {
 	/**
 	 * This is the main method for data generation. It creates output as a list of T.
 	 * In this method, you should write down everything that generator should do to
-	 * return a list of generated data. You ssould remember, that in implementation this will create 
+	 * return a list of generated data. You should remember, that in implementation this will create 
 	 * raw list of data (if you need it), but generators are designed to return data to
 	 * their defined output, so we recommend to use generate() method.
 	 * @return A list of T after the process of data generation.
 	 */
-	public abstract <T> List<T> processTheData();
+	public abstract List<T> processTheData();
 	
 	/**
 	 * Main method of this generator. Invoking it will generate data and send it to defined output.
