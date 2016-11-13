@@ -10,6 +10,14 @@ import java.util.List;
  */
 public interface GeneratorInput {
 
+	/**
+	 * This is the method that should return a list of elements that will be feeding the generator.
+	 * For example you can have a class implementing this interface and this method could then
+	 * return a list of Strings. If this input would generate a list of names, then we would have a full list of them.
+	 * With that list the generator could simply choose just one of them for each output. 
+	 * That would be simple name generator feeding from an input implementing this interface.
+	 * @return
+	 */
 	<T> List<T> getInputForTheGenerator();
 	
 	
