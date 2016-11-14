@@ -6,6 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * It is a type of Database query Executor.
+ * @author grzegorz
+ *
+ */
 public class H2Executor extends DatabaseExecutor {
 
 	private static final String DB_DRIVER = "org.h2.Driver";
